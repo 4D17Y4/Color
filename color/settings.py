@@ -22,7 +22,7 @@ STATIC_DIR= BASE_DIR / 'colorapp/static'
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's4rsi1@z$m%7^b$o3o47xtwov$3%u-_$o*md)d#6z7v24)@z$2'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
