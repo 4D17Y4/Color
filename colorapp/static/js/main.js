@@ -327,7 +327,7 @@ function log3(val) {
 }
 function levelUp(){
     var random=Math.random();
-    if(random>probability && difficulty>10)
+    if(random>probability && difficulty>6)
     {
         difficulty/=1.1;
     }
