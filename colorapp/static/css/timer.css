@@ -1,0 +1,27 @@
+svg {
+    display: block;
+    margin: 50px auto;
+  }
+  
+  #loader 
+  { fill: #0088cc }
+  
+  #border 
+  { fill: #00517a }
+
+  #progressbar {
+    /* background-color: black; */
+    margin-top:10px;
+    margin-bottom:20px;
+    border-radius: 13px;
+    padding-left: var(--timer-length);
+    padding-right: var(--timer-length);
+    /* (height of inner div) / 2 + padding */
+  }
+  
+  #progressbar>div {
+    margin:auto;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 4px rgb(104, 104, 104);
+  }
