@@ -5,7 +5,7 @@
     --title-size:65px;
     --score-height: 80px;
     --timer-length:100px;
-    --box-height:500px;
+    --box-height:480px;
     --box-width:600px;
     --margin:50px;
     --size2:116px;
@@ -176,7 +176,6 @@ p.title{
 .top{
     border-radius: 0 0 30px 30px;
     margin:0 var(--margin);
-    padding: 10px;
     /* padding:20px; */
     background-color:rgba(128, 128, 128, 0.205);
     z-index: 10;
