@@ -23,8 +23,6 @@ entrypoints==0.3
 Faker==4.1.1
 gunicorn==20.0.4
 immutables==0.14
-importlib==1.0.4
-importlib-metadata==2.0.0
 ipykernel==5.3.4
 ipython==7.9.0
 ipython-genutils==0.2.0
