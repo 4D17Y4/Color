@@ -49,7 +49,7 @@
     }
   }
 body{
-padding-top: 20px;
+padding-top: 10px;
 padding-bottom: 20px;
 background:
     radial-gradient(var(--background-color), 3px, transparent 5px),
