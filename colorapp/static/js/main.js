@@ -1,4 +1,4 @@
-console.log('connected');
+//console.log('connected');
 
 
 /*variables*/
@@ -107,7 +107,7 @@ function buildAndFadeIn(){
 function fade(element,callback) {
     var op = 1;  // initial opacity
     var timer = setInterval(function () {
-        console.log('fade'+op);
+        //console.log('fade'+op);
             if (op <= 0.1){
             clearInterval(timer);
             element.style.display = 'none';
@@ -124,7 +124,7 @@ function unfade(element) {
     var op = 0.1;  // initial opacity
     element.style.display = 'block';
     var timer = setInterval(function () {
-        console.log('unfade'+op);
+        ////console.log('unfade'+op);
         if (op >= 1){
             clearInterval(timer);
         }
@@ -235,10 +235,10 @@ function checkWin(rowIndex,colIndex){
     var colorForward=getColor(rowIndex,(colIndex+1)%(num-1));
     var colordown=getColor((rowIndex+1)%(num-1),colIndex);
     if(colorthis!=colorForward&&colorthis!=colordown){
-        console.log("true");
+        //console.log("true");
         return true;
     }
-    console.log("false");
+    //console.log("false");
         return false;
 }
 //helper function 
@@ -260,7 +260,7 @@ function getColor(rowIndex,colIndex){
 $(document).on('click','#coin',function(){
     var col=$(this).closest('td').index();
     var row=$(this).closest('tr').index();
-    console.log(row+" "+ col);
+    //console.log(row+" "+ col);
     onClick(row,col);
 })
 
@@ -334,11 +334,11 @@ function levelUp(){
     var pre=Math.floor(log3(score+3));
     var now=Math.floor(log3(score+4));
     if(pre!=now){
-        console.log('rebuilding');
+        //console.log('rebuilding');
         rebuildTable();
     }
     else{
-        console.log("flipping")
+        //console.log("flipping")
         flip();
     }
 }
@@ -383,7 +383,7 @@ function timeout(){
         }
     }
     setTimeout(function(){
-        console.log(difficulty);
+        //console.log(difficulty);
     $('#replay').css('display','flex');
     $('#replay').css('opacity','0');
     $('#replay').animate({opacity:1},500);
@@ -402,7 +402,7 @@ function changeBackground(){
     // $('#body').animate({'background-color':currentBackground});
 }
 function flip(){
-        console.log('flip');
+        //console.log('flip');
         choose();
         changeBackground();
         var color=currentCoin;
