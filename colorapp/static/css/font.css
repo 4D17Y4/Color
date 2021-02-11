@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'SigmarOne-Regular';
+  src: url('SigmarOne-Regular.eot');
+  src: url('SigmarOne-Regular.eot?#iefix') format('embedded-opentype'),
+       url('SigmarOne-Regular.svg#SigmarOne-Regular') format('svg'),
+       url('SigmarOne-Regular.ttf') format('truetype'),
+       url('SigmarOne-Regular.woff') format('woff'),
+       url('SigmarOne-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
