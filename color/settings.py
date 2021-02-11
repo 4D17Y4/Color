@@ -27,7 +27,7 @@ STATIC_DIR= BASE_DIR / 'colorapp/static'
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 's4rsi1@z$m%7^b$o3o47xtwov$3%u-_$o*md)d#6z7v24)@z$2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'False'
