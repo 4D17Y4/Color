@@ -3,7 +3,7 @@
     overflow: visible !important;
 	perspective: 1000px;
 }
-	/* flip the pane when hovered */
+
 .flip-container.flip .flipper{
     transform: rotateY(180deg);
 }
@@ -16,7 +16,7 @@
 /* flip speed goes here */
 .flipper {
 	padding: 1px;
-	transition: 0.2s;
+	transition: 0.3s;
 	transform-style: preserve-3d;
 	position: relative;
 }

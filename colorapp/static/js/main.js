@@ -116,7 +116,7 @@ function fade(element,callback) {
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op -= op * 0.1;
-    }, 2);
+    }, 3);
 }
 //unfade elements
 //takes approx 100 milliseconds
@@ -131,7 +131,7 @@ function unfade(element) {
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.1;
-    }, 2);
+    }, 3);
 }
 //clear table
 function clearTable(){
@@ -428,6 +428,6 @@ function flip(){
                 }
             }
             i++;
-        },200);
+        },300);
 }
 AOS.init();
