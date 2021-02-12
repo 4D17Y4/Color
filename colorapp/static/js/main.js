@@ -274,7 +274,7 @@ function onClick(row,col){
             levelUp();
             setTimeout(function(){
                 isActive = true;
-            },200);
+            },300);
         }
     }
     else{
@@ -301,11 +301,11 @@ function correct(){
     updateScore();
     clearTimeout(timer);
     tick=0;
-    document.getElementById('load').animate({width:'100%'},200);
+    document.getElementById('load').animate({width:'100%'},300);
     // $('#load').css('width',percent);
     setTimeout(function(){
         clock();
-    },200);
+    },300);
 
 }
 
