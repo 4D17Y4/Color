@@ -47,6 +47,9 @@
     #elements li{
         size: 30px;
     }
+    #play-button{
+        display: none;
+    }
   }
 body{
 padding-top: 10px;

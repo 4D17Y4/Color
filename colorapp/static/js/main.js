@@ -51,6 +51,7 @@ function reSet(){
 
 $(document).on('click','#replay',function(){
     reSet();
+    score=-1;
     correct();
 })
 
@@ -301,14 +302,9 @@ function correct(){
     updateScore();
     clearTimeout(timer);
     tick=0;
-    document.getElementById('load').animate({width:'100%'},300);
-    // $('#load').css('width',percent);
-    setTimeout(function(){
-        clock();
-    },300);
-
+    $('#load').animate({width:'100%'},300);
+    setTimeout(clock,300);
 }
-
 /**
  * fail
  * increase the timer by 1/5
