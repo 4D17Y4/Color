@@ -1,3 +1,3 @@
 # Color
 
-Playable at https://odd-ball.herokuapp.com/
+Playable  at https://odd-ball.herokuapp.com/
