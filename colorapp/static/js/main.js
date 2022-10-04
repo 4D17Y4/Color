@@ -35,21 +35,21 @@ window.onload = function() {
     reSet();
 };
 
-function reSet(){
-    score=0;
-    high=highScore(0);
+function reSet() {
+    score = 0;
+    high = highScore(0);
     updateScore();
     $('#replay').css('display','none');
-    maxLev=6;
-    difficulty=30.0;
-    num=2;
-    i=0;
+    maxLev = 6;
+    difficulty = 30.0;
+    num = 2;
+    i = 0;
     isActive = true;
     choose();
     rebuildTable();
 }
 
-$(document).on('click','#replay',function(){
+$(document).on('click','#replay',function() {
     reSet();
     correct();
 })
@@ -64,51 +64,49 @@ $(document).on('click','#replay',function(){
  * 6. setting up the table colors front and back
  * 7. changing background color
  */
-function rebuildTable(){
-    var x=document.getElementById('playArea');
-    fade(x,function(){buildAndFadeIn()});
+function rebuildTable() {
+    var x = document.getElementById('playArea');
+    fade(x, function() { buildAndFadeIn() });
     changeBackground();
 }
-function buildAndFadeIn(){
+function buildAndFadeIn() {
     clearTable();
-    var playArea=document.getElementById('playArea');
-    for(var nRow=0;nRow<num;nRow++){
+    var playArea = document.getElementById('playArea');
+    for(var nRow = 0;nRow < num;nRow++){
         playArea.appendChild(createRow());
     }
-    unfade(playArea)
+    unfade(playArea);
     num++;
-    if(num>6)
-    num=6;
-    i=0;
-    var y=document.querySelectorAll(".front");
-    var random=Math.floor(Math.random()*100)%y.length;
-        for(var j = 0;j<y.length;j++){
-            var temp = y[j];
-            if(j==random)
-            {
-                    temp.style.background=currentOdd;
-            }
+    if(num > 6) num = 6;
+    i = 0;
+    var y = document.querySelectorAll(".front");
+    var random = Math.floor(Math.random() * 100) % y.length;
+    for(var j = 0;j < y.length;j++){
+        var temp = y[j];
+        if(j == random) {
+            temp.style.background = currentOdd;
+        }
     }
     choose();
-    var y=document.querySelectorAll(".back");
-    random=Math.floor(Math.random()*100)%y.length;
-        for(var j = 0;j<y.length;j++){
+    var y = document.querySelectorAll(".back");
+    random = Math.floor(Math.random()*100)%y.length;
+        for(var j = 0;j < y.length;j++){
             var temp = y[j];
-            temp.style.background=currentCoin;
-            if(j==random)
-            {
-                    temp.style.background=currentOdd;
+            temp.style.background = currentCoin;
+            if(j == random) {
+                temp.style.background = currentOdd;
             }
     }
-    $('#load').css('background-color',currentCoin);
+    $('#load').css('background-color', currentCoin);
 }
+
 //fade elements
 //takes approx 100 milliseconds
-function fade(element,callback) {
+function fade(element, callback) {
     var op = 1;  // initial opacity
     var timer = setInterval(function () {
         console.log('fade'+op);
-            if (op <= 0.1){
+        if (op <= 0.1){
             clearInterval(timer);
             element.style.display = 'none';
             callback();
@@ -134,43 +132,42 @@ function unfade(element) {
     }, 2);
 }
 //clear table
-function clearTable(){
-    var playArea=document.getElementById('playArea');
-    playArea.innerHTML="";
+function clearTable() {
+    var playArea = document.getElementById('playArea');
+    playArea.innerHTML = "";
 }
 //creating coins.
 //needs some polishing for sure
-function createElement(){
-    var element=document.createElement('td');
-    var  coin =document.createElement('dev');
-    coin.id="coin";
-    coin.className="flip-container";
-    var flipper=document.createElement('div');
-    flipper.className="flipper";
-    var front=document.createElement('div');
-    front.className="front";
-    front.style.background=currentCoin;
-    front.style.height="var(--size"+num+")";
-    front.style.width="var(--size"+num+")";
-    var back=document.createElement('div');
-    back.className="back";
-    back.style.background=currentCoin;
-    back.style.height="var(--size"+num+")";
-    back.style.width="var(--size"+num+")";
+function createElement() {
+    var element = document.createElement('td');
+    var  coin = document.createElement('dev');
+    coin.id = "coin";
+    coin.className = "flip-container";
+    var flipper = document.createElement('div');
+    flipper.className = "flipper";
+    var front = document.createElement('div');
+    front.className = "front";
+    front.style.background = currentCoin;
+    front.style.height = "var(--size"+num+")";
+    front.style.width = "var(--size"+num+")";
+    var back = document.createElement('div');
+    back.className = "back";
+    back.style.background = currentCoin;
+    back.style.height = "var(--size"+num+")";
+    back.style.width = "var(--size"+num+")";
     flipper.append(front);
     flipper.append(back);
-    flipper.style.height="var(--size"+num+")";
-    flipper.style.width="var(--size"+num+")";
-    flipper.style.margin="var(--margin"+num+")";
+    flipper.style.height = "var(--size"+num+")";
+    flipper.style.width = "var(--size"+num+")";
+    flipper.style.margin = "var(--margin"+num+")";
     coin.append(flipper);
     element.append(coin);
     return element;
 }
 //creating a row with num no of elements
-function createRow(){
+function createRow() {
     var row =document.createElement('tr');
-    for(var nCol=0;nCol<num;nCol++)
-    {
+    for(var nCol=0;nCol<num;nCol++) {
         row.append(createElement());
     }
     return row;
@@ -205,14 +202,14 @@ function shadeColor(color, percent) {
 //choosing colors
 //50-50 chance of choosing light or dark shaded odd color
 function choose(){
-    currentBackground=getRandomColor();
-    currentCoin=getRandomColor();
-    var temp=Math.random();
-    if(temp>0.5){
-        currentOdd=shadeColor(currentCoin,difficulty);
+    currentBackground = getRandomColor();
+    currentCoin = getRandomColor();
+    var temp = Math.random();
+    if(temp > 0.5){
+        currentOdd = shadeColor(currentCoin,difficulty);
     }
     else{
-        currentOdd=shadeColor(currentCoin,-difficulty);
+        currentOdd = shadeColor(currentCoin,-difficulty);
     }
 }
 //generating random color
@@ -231,23 +228,23 @@ function getRandomColor() {
  * algo: check color with forward and down if both are false its win
  */
 function checkWin(rowIndex,colIndex){
-    var colorthis=getColor(rowIndex,colIndex);
-    var colorForward=getColor(rowIndex,(colIndex+1)%(num-1));
-    var colordown=getColor((rowIndex+1)%(num-1),colIndex);
-    if(colorthis!=colorForward&&colorthis!=colordown){
+    var colorthis = getColor(rowIndex, colIndex);
+    var colorForward = getColor(rowIndex, (colIndex + 1) % (num - 1));
+    var colordown = getColor((rowIndex + 1) % (num - 1), colIndex);
+    if(colorthis != colorForward && colorthis != colordown){
         console.log("true");
         return true;
     }
     console.log("false");
-        return false;
+    return false;
 }
 //helper function 
 //getsElementColor
-function getColor(rowIndex,colIndex){
-    var toFind=".back";
-    if(i%2==0)
+function getColor(rowIndex, colIndex){
+    var toFind = ".back";
+    if(i % 2 == 0)
     toFind = ".front";
-    var coin=document.getElementById('playArea').rows[rowIndex].cells[colIndex].querySelector(toFind);
+    var coin = document.getElementById('playArea').rows[rowIndex].cells[colIndex].querySelector(toFind);
     return coin.style.background;
 }
 
@@ -257,24 +254,24 @@ function getColor(rowIndex,colIndex){
  * getting the nearest element clicked
  * and performing actions of win and lose
  */
-$(document).on('click','#coin',function(){
-    var col=$(this).closest('td').index();
-    var row=$(this).closest('tr').index();
-    console.log(row+" "+ col);
-    onClick(row,col);
+$(document).on('click', '#coin', function() {
+    var col = $(this).closest('td').index();
+    var row = $(this).closest('tr').index();
+    console.log(row + " " + col);
+    onClick(row, col);
 })
 
-var isActive=true;//restricting multiple taps.
+var isActive = true;//restricting multiple taps.
 
-function onClick(row,col){
-    if(checkWin(row,col)){
+function onClick(row, col) {
+    if(checkWin(row, col)){
         if(isActive){
             isActive = false;
             correct();
             levelUp();
             setTimeout(function(){
                 isActive = true;
-            },200);
+            }, 200);
         }
     }
     else{
@@ -288,22 +285,22 @@ function onClick(row,col){
  * increase score 
  * reset timer
  */
-function updateScore(){
+function updateScore() {
     document.getElementById('current-score').innerHTML="> " + (score);
     if(score > high)
     highScore(score);
     document.getElementById('high-score').innerHTML= highScore(high) +" <";
 }
-var tick=0;
-var score=0;
-function correct(){
-    score+=1;
+var tick = 0;
+var score = 0;
+function correct() {
+    score += 1;
     updateScore();
     clearTimeout(timer);
-    tick=0;
+    tick = 0;
     document.getElementById('load').animate({width:'100%'},200);
     // $('#load').css('width',percent);
-    setTimeout(function(){
+    setTimeout(function() {
         clock();
     },200);
 
@@ -313,7 +310,7 @@ function correct(){
  * fail
  * increase the timer by 1/5
  */
-function fail(){
+function fail() {
     tick+=100;
 }
 
@@ -321,19 +318,18 @@ function fail(){
  * LevelUp
  * probability of difficulty increase on each correct = 1-e;
  */
-var probability=0.6;
+var probability = 0.6;
 function log3(val) {
     return Math.log(val) / Math.log(3);
 }
-function levelUp(){
-    var random=Math.random();
-    if(random>probability && difficulty>10)
-    {
-        difficulty/=1.1;
+function levelUp() {
+    var random = Math.random();
+    if(random > probability && difficulty > 10) {
+        difficulty /= 1.1;
     }
-    var pre=Math.floor(log3(score+3));
-    var now=Math.floor(log3(score+4));
-    if(pre!=now){
+    var pre = Math.floor(log3(score + 3));
+    var now = Math.floor(log3(score + 4));
+    if(pre != now) {
         console.log('rebuilding');
         rebuildTable();
     }
@@ -348,20 +344,20 @@ function levelUp(){
  * time * limit = total time in milliseconds.
  * timer variable to stop the timer and reset in when required.
  */
-var time=10;
-var limit=500;
+var time = 10;
+var limit = 500;
 var timer;
-function clock(){
+function clock() {
     tick++;
-    if(tick>limit){
+    if(tick > limit) {
         $('#load').css('width',"0%");
         clearTimeout(timer);
         timeout();
     }
     else{
-    var percent= (500-tick)/5 +"%";
-    $('#load').css('width',percent);
-    timer=setTimeout(clock,time);
+        var percent = (500 - tick) / 5 + "%";
+        $('#load').css('width', percent);
+        timer = setTimeout(clock, time);
     }
 }
 
@@ -369,26 +365,25 @@ function clock(){
 /* Time limit reached for level completion */
 // restrict taps (click events)
 // highlight the odd element
-function timeout(){
+function timeout() {
     isActive = false;
-    for(var k=0;k<num-1;k++){
-        for(var t=0;t<num-1;t++){
-            if(checkWin(k,t))
-            {
-                var coin=document.getElementById('playArea').rows[k].cells[t].querySelector('.front');
-                coin.style.border='5px solid white';
-                var coin=document.getElementById('playArea').rows[k].cells[t].querySelector('.back');
-                coin.style.border='5px solid white';
+    for(var k = 0;k < num - 1;k++){
+        for(var t = 0;t < num - 1;t++){
+            if(checkWin(k,t)) {
+                var coin = document.getElementById('playArea').rows[k].cells[t].querySelector('.front');
+                coin.style.border = '5px solid white';
+                var coin = document.getElementById('playArea').rows[k].cells[t].querySelector('.back');
+                coin.style.border = '5px solid white';
             }
         }
     }
-    setTimeout(function(){
+    setTimeout(function() {
         console.log(difficulty);
-    $('#replay').css('display','flex');
-    $('#replay').css('opacity','0');
-    $('#replay').animate({opacity:1},500);
-    },500);
-}
+        $('#replay').css('display','flex');
+        $('#replay').css('opacity','0');
+        $('#replay').animate({opacity:1},500);
+        },500);
+    }
 
 $("a[href='#play']").click(function() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -397,7 +392,7 @@ $("a[href='#play']").click(function() {
 
 
 //flipping all coins
-function changeBackground(){
+function changeBackground() {
     document.documentElement.style.setProperty("--background-color", currentBackground);
     // $('#body').animate({'background-color':currentBackground});
 }
@@ -405,29 +400,26 @@ function flip(){
         console.log('flip');
         choose();
         changeBackground();
-        var color=currentCoin;
+        var color = currentCoin;
         $('#load').css('background-color',color);
-        var x=document.querySelectorAll(".flip-container");
-        for(var j = 0;j<x.length;j++) {
+        var x = document.querySelectorAll(".flip-container");
+        for(var j = 0;j < x.length;j++) {
             x[j].classList.toggle("flip");
         }
         var y;
         setTimeout(function(){
-        if(i%2==0)
-        y=document.querySelectorAll(".front");   
-        else
-        y=document.querySelectorAll(".back");
-        var random=Math.floor(Math.random()*100)%y.length;
-        for(var j = 0;j<y.length;j++){
+        if(i % 2 == 0) y = document.querySelectorAll(".front");   
+        else y=document.querySelectorAll(".back");
+        var random = Math.floor(Math.random()*100)%y.length;
+        for(var j = 0;j < y.length;j++){
                 var temp = y[j];
                 temp.style.background=color;
-                if(j==random)
-                {
+                if(j==random) {
                     temp.style.background=currentOdd;
                     // temp.textContent="odd";
                 }
             }
             i++;
-        },200);
+        }, 200);
 }
 AOS.init();
