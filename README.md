@@ -3,7 +3,7 @@
 Playable at https://odd-ball.herokuapp.com/
 
 
-### Play with randomised unique colors!
+### Play with randomised unique colors !
 ![image](https://user-images.githubusercontent.com/89393555/139523955-a0a21218-d856-4ad2-aad7-83753cf47554.png)
 
 ### Find the odd one out to continue playing .
