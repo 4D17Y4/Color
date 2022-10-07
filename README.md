@@ -1,6 +1,6 @@
 # Color
 
-Playable at https://odd-ball.herokuapp.com/
+Have Fun here: https://odd-ball.herokuapp.com/
 
 
 ### Play with randomised unique colors !
