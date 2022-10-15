@@ -12,5 +12,5 @@ Have Fun here: https://odd-ball.herokuapp.com/
 ### Start Again  ?
 ![image](https://user-images.githubusercontent.com/89393555/139523949-c72288c5-695b-43df-b945-4f16940b0f6b.png)
 
-#### Repository Owner
+## Repository Owner 
 This repository is owned and maintained by [Aditya Srivastava](https://github.com/4D17Y4/) 
