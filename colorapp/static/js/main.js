@@ -1,19 +1,19 @@
-console.log('CONNECTED.');
+// console.log('CONNECTED.');
 
 
 /*variables*/
-var maxLev=6;// number of levels
+var maxLev=6;   // number of levels
 var difficulty=30.0;
-var num=2;//starting level
-var i=0;//variable to check the coin state (front or back)
+var num=2;  //starting level
+var i=0;    //variable to check the coin state (front or back)
 var currentBackground;
 var currentCoin;
 var currentOdd;
 var high=0;
+
 /**
  * starting game
  */
-
 function highScore(score) {
     var saved = 0;
     try { saved = parseFloat(localStorage.highScore); } catch (e) { saved = 0; }
