@@ -1,6 +1,6 @@
 # Color
 
-Have Fun here: [Deployed App on Heroku](https://odd-ball.herokuapp.com/)
+Have Fun here: [Deployed App on Github Pages](https://4d17y4.github.io/Color/)
 
 
 ### Play with randomised unique colors !
